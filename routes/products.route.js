@@ -1,10 +1,10 @@
 import { Router } from "express";
+import { ProductControllers } from "../controllers/products.controller.js";
 const productRoute = Router();
 
-productRoute.get("/", (req, res) => {
-    res.send("GET:product");
-});
-productRoute.post("/", (req, res) => {});
-productRoute.delete("/", (req, res) => {});
+productRoute.get("/", ProductControllers.getProducts);
+productRoute.post("/", ProductControllers.createProduct);
+productRoute.put("/", ProductControllers.updateProduct);
+productRoute.delete("/", ProductControllers.deleteProducts);
 
 export { productRoute };
