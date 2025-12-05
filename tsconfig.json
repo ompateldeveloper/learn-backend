@@ -42,6 +42,6 @@
         "skipLibCheck": true,
         "allowJs": true
     },
-    "include": ["**/*"],
+    "include": ["**/*.ts", "validators/product.validator.js"],
     "exclude": ["node_modules"]
 }

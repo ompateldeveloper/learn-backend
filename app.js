@@ -5,14 +5,15 @@ import { config } from "dotenv";
 config();
 const app = express();
 /*
-read  -- get
-create -- post
-update -- put/patch
-delete -- delete
+read  -- get -- to give data
+create -- post -- to get/give data
+update -- put/patch -- to get/give data
+delete -- delete -- no get data
 checking -- options
 -- 
 */
 
+app.use(express.json())
 const port = process.env.PORT;
 // impure
 const xyz = async () => {

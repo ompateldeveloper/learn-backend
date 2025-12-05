@@ -16,9 +16,11 @@ datasource db {
 
 // tables
 model User {
-  id String @id @default(cuid())
-  fName String?
-  lName String?
+  id     String  @id @default(cuid())
+  fName  String
+  lName  String
+  number String
+  email  String
 }
 
 model Role {
@@ -30,5 +32,5 @@ model Products {
   name        String
   description String
   price       String
-  thumbnail   Bytes
+  thumbnail   Bytes?
 }
