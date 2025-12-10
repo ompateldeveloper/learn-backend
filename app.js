@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { productRoute } from "./routes/products.route.js";
 import { config } from "dotenv";
+import { authRouter } from "./routes/auth.route.js";
 config();
 const app = express();
 /*
@@ -13,7 +14,7 @@ checking -- options
 -- 
 */
 
-app.use(express.json())
+app.use(express.json());
 const port = process.env.PORT;
 // impure
 const xyz = async () => {
@@ -32,6 +33,7 @@ app.get("/", async (req, res) => {
     return res.send("hello my world");
 });
 
+app.use("/auth", authRouter);
 app.use("/products", productRoute);
 
 app.listen(port || 8080, () => {

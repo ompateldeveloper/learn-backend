@@ -11,16 +11,16 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
 }
 
 // tables
 model User {
-  id     String  @id @default(cuid())
-  fName  String
-  lName  String
-  number String
-  email  String
+  id       String  @id @default(cuid())
+  fName    String?
+  lName    String?
+  number   String?
+  email    String
+  password String
 }
 
 model Role {
