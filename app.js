@@ -3,6 +3,7 @@ import cors from "cors";
 import { productRoute } from "./routes/products.route.js";
 import { config } from "dotenv";
 import { authRouter } from "./routes/auth.route.js";
+import { CartRoute } from "./routes/cart.route.js";
 config();
 const app = express();
 /*
@@ -35,6 +36,7 @@ app.get("/", async (req, res) => {
 
 app.use("/auth", authRouter);
 app.use("/products", productRoute);
+app.use("/cart", CartRoute);
 
 app.listen(port || 8080, () => {
     console.log("server started");
